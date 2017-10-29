@@ -14,7 +14,8 @@ html {
 
 
 body {
-		/*background-color: #D3D3D3;*/
+	margin-top: 1%;
+	/*background-color: #D3D3D3;*/
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b8c6df+0,ea8ce2+61 */
 	background: #b8c6df; /* Old browsers */
 	background: -moz-linear-gradient(top,  #b8c6df 0%, #ea8ce2 61%); /* FF3.6-15 */
@@ -30,20 +31,8 @@ body {
 .header {
 	color:  rgb(255, 0, 102);
 	text-shadow: 1px 0px 2px white;
-	padding-bottom: 3%;
 	
-}
-
-.container {
-	padding: 2%;
-}
-
-img {
-	float: left;
-}
-
-h1 {
-	padding-top: 3%;
+	text-align: center;
 }
 
 #btn {
@@ -51,9 +40,16 @@ h1 {
 }
 
 #results {
+	width: 50%;
+	line-height: 20px;
 	text-align: center;
-	line-height: 2%;
-} 
+	font-family: sans-serif;
+	margin: 0 auto;
+}
+
+table {
+	text-align: center;
+}
 
 h2 {
 	text-align: center;

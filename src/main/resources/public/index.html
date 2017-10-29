@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Tic Tac Toe by Kisa fór í Costco</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="./stylesheet.css"/>
 
-	</head>
+<head>
+	<title>Tic Tac Toe by Kisa fór í Costco</title>
+	<!--<meta name="keywords" content="Mylla, leikir, afþreying">-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
-	<body>
-		<div id="fullform">
-			<div class="container" id="container">
+	<!-- Þetta væri ef við viljum setja mynd í hornið
+		<link rel="icon" href="http://www.hannarr.com/wp-content/uploads/2016/12/logo_hus_350_350-45x45.png" sizes="32x32">
+		-->
+</head>
+
+<body>
+	<div id="fullform">
+		<div class="container" id="container">
 			<div class="header">
-			<img src="logo.png" alt="cat paw logo" height="120">
-			<h1>  2 Player Tic Tac Toe by Kisa fór í Costco</h1>
+				<img src="logo.png" alt="cat paw logo" height="120">
+				<h1> 2 Player Tic Tac Toe </h1>
+				<p>- by Kisa fór í Costco</p>
 			</div>
-			
+			<div id="btn">
+				<input type="reset"  value="Start a New game" id="reset">
+			</div>
+			<hr>
 			<form>
 				<input type="submit" name="one" id="0,0" value="" class="button">
 				<input type="submit" name="two" id="0,1" value="" class="button">
-				<input type="submit" name="three" id="0,2" value="" class="button"> <br>
+				<input type="submit" name="three" id="0,2" value="" class="button">
+				<br>
 				<input type="submit" name="four" id="1,0" value="" class="button">
 				<input type="submit" name="five" id="1,1" value="" class="button">
-				<input type="submit" name="six" id="1,2" value="" class="button"> <br>
+				<input type="submit" name="six" id="1,2" value="" class="button">
+				<br>
 				<input type="submit" name="seven" id="2,0" value="" class="button">
 				<input type="submit" name="eight" id="2,1" value="" class="button">
-				<input type="submit" name="nine" id="2,2" value="" class="button"> <br>
-				</form>
-				<hr>
-			<div id="results" class="alert alert-info">
-        <h2>
-					Click "New game" to start"
-				</h2>
-			</div>
-			<div id="btn">
-				<input type="reset" value="New game" id="reset">
-			</div>
+				<input type="submit" name="nine" id="2,2" value="" class="button">
+				<br>
+			</form>
+
+			<div id="results"> </div>
 
 			<hr>
-			</div>
 		</div>
-		<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-		<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
-		<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+	</div>
+	<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
 
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
 
-			$(document).ready(function() {
-		      var form = $('form');
-		      $('.button').click(function( event ) {
-					event.preventDefault();
-		          $.ajax({
-		            type: "post",
-		            url: "/add",
-								data: { "input" : event.target.id }
-		          }).done(function(result) {
-		            $('#results').html(result).attr('class', 'alert alert-success');
-		          }).fail(function() {
-		            $('#results').html('Error, Illegal input...').attr('class', 'alert alert-danger');
-		          });
-
-				  });
-				$('#reset').click(function( event ) {
+		$(document).ready(function () {
+			var form = $('form');
+			//$('#reset').trigger('click');
+			$('.button').click(function (event) {
 				event.preventDefault();
-					$.ajax({
-		            type: "delete",
-		            url: "/reset",
-		          }).done(function(result) {
-		            $('#results').html(result).attr('class', 'alert alert-success');
-		          }).fail(function() {
-		            $('#results').html('Error, Illegal input...').attr('class', 'alert alert-danger');
-							});
-				 });
-      });
+				$.ajax({
+					type: "post",
+					url: "/add",
+					data: { "input": event.target.id }
+				}).done(function (result) {
+					$('#results').html(result).attr();
+				}).fail(function () {
+					$('#results').html('Error, Illegal input...').attr();
+				});
 
-		</script>
-	</body>
+			});
+			$('#reset').click(function (event) {
+				event.preventDefault();
+				$.ajax({
+					type: "delete",
+					url: "/reset",
+				}).done(function (result) {
+					$('#results').html(result).attr();
+				}).fail(function () {
+					$('#results').html('Error, Illegal input...').attr();
+				});
+
+
+			});
+		});
+
+	</script>
+</body>
+
 </html>

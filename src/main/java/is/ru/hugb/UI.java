@@ -8,17 +8,18 @@ import static spark.Spark.*;
 public class UI {
   // Print board for game in html
   public static String printBoard(Game game) {
-    String out = "<h1>";    
-    out += "<table>";
+    String out = "<h2>";
+    out += "<table align='center' style='border: 3px solid black; background-color: rgb(216, 216, 216);'>";
     for (int i = 0; i < 3; i++) {
       out += "<tr>";
         for (int j = 0; j < 3; j++) {
-          out += "<td>" + game.getBoard()[i][j] + "</td>";
+          out += "<td style='border: 3px solid black' width='100' height='100'>" + "&nbsp;" + game.getBoard()[i][j] + " &nbsp;" + "</td>";
         }
         out += "</tr>";
+        out += "&nbsp;";
       }
     out += "</table>";
-    return out + "<h1>";
+    return out ;
   }
   
   // Clear board and reset state and player for new game
@@ -34,40 +35,42 @@ public class UI {
   // Game is played here
   public static void main(String[] args) {
     // In order for this to work on Heroku, we need to allow Heroku to set the port number
-    staticFileLocation("/public");
-    port(getHerokuPort());
+      staticFileLocation("/public");
+      port(getHerokuPort());
 
-    Game game = new Game();
-    UI ui = new UI();
+       Game game = new Game();
+       UI ui = new UI();
 
-    post("/add", (req, res) -> {
-      String input = req.queryParams("input");
-      String numbers[] = input.split(",");
+      post("/add", (req, res) -> {
 
-			int iInput1 = Integer.parseInt(numbers[0]);
-		  int iInput2 = Integer.parseInt(numbers[1]);
-      
-      game.setCell(iInput1, iInput2);
-        
-      if(game.getState() == Game.State.PLAYING){
-				return ui.printBoard(game) + "<br> <h1>" + game.getPlayer() + "'s turn";
+           String input = req.queryParams("input");
+           String numbers[] = input.split(",");
+
+			     int iInput1 = Integer.parseInt(numbers[0]);
+		       int iInput2 = Integer.parseInt(numbers[1]);
+
+			game.setCell(iInput1, iInput2);
+
+            if(game.getState() == Game.State.PLAYING){
+        return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
 			}
 			else if(game.getState() == Game.State.WIN) {
-				return ui.printBoard(game) + "<br> <h1>" + game.getPlayer() + " has won!! :)";
+
+				return ui.printBoard(game) + "<h3>" + game.getPlayer() + " has won!! :)";
 			}
 			else {
-				return ui.printBoard(game) + "<br> <h1>It's a draw!";
+				return ui.printBoard(game) + "<h3>It's a draw!";
 			}
     });
 
 		delete("/reset", (req, res) -> {
 			ui.clearBoard(game);
-			return "<h1> Play Tic Tac Toe! </h1>" + ui.printBoard(game) + "<br> <h1>" + game.getPlayer() + "'s turn";
+			return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
 		});
 
     get("/", (req, res) -> {
       ui.clearBoard(game);
-      return "<h1> Play Tic Tac Toe! </h1>" + ui.printBoard(game) + "<br> <h1>" + game.getPlayer() + "'s turn";
+      return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
     });
   }
     static int getHerokuPort() {

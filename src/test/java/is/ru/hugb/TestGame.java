@@ -17,7 +17,7 @@ public class TestGame {
 
     @Test
 	public void testChangePlayer(){
-    	assertEquals('o', g.changePlayer('x'));
+    	assertEquals('O', g.changePlayer('X'));
     }
 	
 	@Test

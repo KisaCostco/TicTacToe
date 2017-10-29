@@ -5,16 +5,12 @@ Tic Tac Toe is a web console game, just like the original the rules are that eac
 
 ## Features
 * User can play the game with a friend or by himself.
+* User selects a button that puts their mark on the board on the same location as the button is.
+* After a game or if players decide to start a new game the players can press the Start a New Game button to do so.
 * A win can accure when three of the same marks are in a row, either horizontally, vertically or diagonally.
-* A descriptive error message will appear when a user inputs wrong values for the board.
 * A message appears at the end of the came to tell the user or users who has won or if a draw has accured.
 * At the start of each players round a message appears that tells the user or users who's turn it is.
 * The board gets updated and displayed after each turn.
-
-## Coding standards
-* Code must be commented
-* Class names are in Pascal casing and function names are in Camel casing.
-* Kernighan and Ritchie brace style
 * Tested on macOS 10 and Windows 10.
 
 ## Built with
@@ -25,6 +21,7 @@ Tic Tac Toe is a web console game, just like the original the rules are that eac
 * [Gradle](https://gradle.org)
 * [Travis](https://travis-ci.org/)
 * [Heruko](https://www.heroku.com/) 
+* [Selenium](http://www.seleniumhq.org/)
 
 
 ## Members of Kisa Fór í Costco

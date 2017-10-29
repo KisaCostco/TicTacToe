@@ -13,7 +13,8 @@ TicTacToe is a simple two player game in which the first player is assigned the 
 ##  Design
 We chose to implement the game in a simple version where there are two playing against each other. The initial design was a console application and when it was complete, we moved on to a web application. In the web application the board is 9 squares and above it there are nine buttons corresponding to each square on the board. The player picks where he wants his mark to go. Then the board prints out the state of the game.
 
-MYND ?
+![UI](https://github.com/KisaCostco/TicTacToe/blob/master/ui.png)
+
 
 ## Classes
 
@@ -21,6 +22,8 @@ Our code is object-oriented and follows recommended design principles.
 
 ### Class diagram
 Here is the updated class diagram, which changed a bit from the initial design, but conserved the initial class structure for the most part. Below we describe each class and their relations briefly.
+
+![ClassDiagram](https://github.com/KisaCostco/TicTacToe/blob/master/classdiagram.jpg)
 
 ### Board.java
 This is the class which handles the business logic of the game board. It can be seen as the bottom layer, and the UI has no direct access to it. It sets up the board as a double array in a fixed size and updates the cells. It also checks if the board is full and whether a user has won.

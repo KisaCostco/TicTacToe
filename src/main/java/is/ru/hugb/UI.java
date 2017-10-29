@@ -52,7 +52,7 @@ public class UI {
 			game.setCell(iInput1, iInput2);
 
             if(game.getState() == Game.State.PLAYING){
-        return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
+        return ui.printBoard(game) + "<h3>" + "Player " + game.getPlayer() + ", it's your turn";
 			}
 			else if(game.getState() == Game.State.WIN) {
 
@@ -65,12 +65,12 @@ public class UI {
 
 		delete("/reset", (req, res) -> {
 			ui.clearBoard(game);
-			return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
+			return ui.printBoard(game) + "<h3>" + "Player " + game.getPlayer() + ", it's your turn";
 		});
 
     get("/", (req, res) -> {
       ui.clearBoard(game);
-      return ui.printBoard(game) + "<h3>" + game.getPlayer() + "'s turn";
+      return ui.printBoard(game) + "<h3>" + "Player " + game.getPlayer() + ", it's your turn";
     });
   }
     static int getHerokuPort() {

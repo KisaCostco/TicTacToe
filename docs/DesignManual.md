@@ -1,5 +1,8 @@
 # Design report for TicTacToe
 
+[Download manual as PDF](https://gitprint.com/KisaCostco/TicTacToe/blob/master/docs/AdministrationManual.md)
+
+
 This is an assignment in the course 
 
 ## The project

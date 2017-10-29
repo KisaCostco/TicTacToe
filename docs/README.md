@@ -3,6 +3,8 @@
 # Tic Tac Toe by Kisa Fór í Costco
 Tic Tac Toe is a web console game, just like the original the rules are that each player takes a turn, the first player puts an 'x' in the 3x3 board and then the second player takes a turn and puts an 'o'. This goes on until either one of the player has put his mark in three slots horizontal, vertical or diagonal in a row or when the board is full, which would be a draw. To play the game the player presses a button and his mark appers on the same place in the grid.
 
+Play the game on https://kfc-tictactoe.herokuapp.com/.
+
 ## Features
 * User can play the game with a friend or by himself.
 * User selects a button that puts their mark on the board on the same location as the button is.

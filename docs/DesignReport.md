@@ -1,7 +1,5 @@
 # Design report for TicTacToe
 
-[Download report as PDF](https://gitprint.com/KisaCostco/TicTacToe/blob/master/docs/DesignReport.md)
-
 This is an assignment in the software development course SC-T-303-HUGB at Reykjavík University.
 
 ## Project
@@ -35,4 +33,5 @@ The Game class handles the logic concerning the game in session. It keeps track 
 Initially, this contained the UI for the console application, but was transformed into a Spark backend which also uses JavaScript/HTML/CSS. The game is live on [https://kfc-tictactoe.herokuapp.com/](https://kfc-tictactoe.herokuapp.com/).
 
 
+[Download report as PDF](https://gitprint.com/KisaCostco/TicTacToe/blob/master/docs/DesignReport.md)
 

@@ -15,6 +15,11 @@ We chose to implement the game in a simple version where there are two playing a
 
 ![UI](https://github.com/KisaCostco/TicTacToe/blob/master/ui.png)
 
+## Coding standards
+* Code must be commented
+* Class names are in Pascal casing and function names are in Camel casing.
+* Kernighan and Ritchie brace style
+
 
 ## Classes
 

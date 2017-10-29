@@ -1,7 +1,5 @@
 # Design report for TicTacToe
 
-[Download report as PDF](https://gitprint.com/KisaCostco/TicTacToe/blob/master/docs/DesignReport.md)
-
 This is an assignment in the software development course SC-T-303-HUGB at Reykjavík University.
 
 ## Project
@@ -14,6 +12,11 @@ TicTacToe is a simple two player game in which the first player is assigned the 
 We chose to implement the game in a simple version where there are two playing against each other. The initial design was a console application and when it was complete, we moved on to a web application. In the web application the board is 9 squares and above it there are nine buttons corresponding to each square on the board. The player picks where he wants his mark to go. Then the board prints out the state of the game.
 
 ![UI](https://github.com/KisaCostco/TicTacToe/blob/master/ui.png)
+
+## Coding standards
+* Code must be commented
+* Class names are in Pascal casing and function names are in Camel casing.
+* Kernighan and Ritchie brace style
 
 
 ## Classes
@@ -35,4 +38,5 @@ The Game class handles the logic concerning the game in session. It keeps track 
 Initially, this contained the UI for the console application, but was transformed into a Spark backend which also uses JavaScript/HTML/CSS. The game is live on [https://kfc-tictactoe.herokuapp.com/](https://kfc-tictactoe.herokuapp.com/).
 
 
+[Download report as PDF](https://gitprint.com/KisaCostco/TicTacToe/blob/master/docs/DesignReport.md)
 

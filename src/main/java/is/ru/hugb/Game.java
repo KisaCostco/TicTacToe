@@ -31,6 +31,11 @@ public class Game {
 		return currentPlayer;
 	}
 
+	//sends the board from Board.java to maintain code abstraction
+	public char[][] getBoard() {
+		return board.getBoard();
+	}
+	
 	// sets the given user input to the correct cell
 	public Boolean setCell(int row, int col) {
 		// continues if the move is legal
@@ -60,9 +65,5 @@ public class Game {
 		else {
 			return PLAYER_O;
 		}
-	}
-	//sends the board from Board.java to maintain code abstraction
-	public char[][] getBoard() {
-		return board.getBoard();
 	}
 }

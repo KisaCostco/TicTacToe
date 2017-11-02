@@ -31,7 +31,6 @@ public class Board {
           }
 
           return true;
-
         }
 
         // X or O written to the correct cell
